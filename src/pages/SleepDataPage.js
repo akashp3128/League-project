@@ -1,21 +1,20 @@
-// src/pages/SleepDataPage.js
 import React from 'react';
-import SleepData from '../components/SleepData'; // Import the SleepData component
-// Correct usage for a named export
-//import { SleepData } from './components/SleepData';
+import Navigation from '../components/Navigation';
+import SleepData from '../components/SleepData';
+import './styles.css'; // Import the CSS file
 
 const SleepDataPage = () => {
-  // Sample data (replace with your actual data)
+  // Mock data for demonstration
   const data = [
-    { id: 1, team: 'Team A', record: '3-1', pf: 120 },
-    { id: 2, team: 'Team B', record: '2-2', pf: 105 },
-    // Add more data items as needed
+    { id: 1, team: 'Team A', record: '5-2', pf: 30 },
+    { id: 2, team: 'Team B', record: '4-3', pf: 28 },
+    // Add more data as needed
   ];
 
   return (
-    <div>
-      <h1>Sleep Data Page</h1>
-      <SleepData data={data} /> 
+    <div className="page-container">
+      <h1 className="welcome-message">Sleep Data Page</h1>
+      <SleepData data={data} />
     </div>
   );
 };
