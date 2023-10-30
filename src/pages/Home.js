@@ -5,8 +5,7 @@ import Navigation from '../components/Navigation'; // Import the Navigation comp
 const Home = () => {
   return (
     <div>
-      <h1>Welcome to Sleep Data App</h1>
-      <Navigation />
+      <h1>Welcome to Sleeper Data App</h1>
     </div>
   );
 };
