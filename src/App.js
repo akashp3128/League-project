@@ -12,8 +12,9 @@ function App() {
       <div className="App">
         <Navigation />
         <Routes>
-          <Route path="/" exact component={Home} />
-          <Route path="/sleep-data" component={SleepDataPage} />
+        <Route path="/" exact element={<Home />} />
+        <Route path="/sleep-data" element={<SleepDataPage />} />
+        {/* Other routes */}
         </Routes>
       </div>
     </Router>
