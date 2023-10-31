@@ -1,12 +1,11 @@
-// src/pages/Home.js
 import React from 'react';
-import Navigation from '../components/Navigation'; // Import the Navigation component
-import './styles.css'; // Import the CSS file
+import Navigation from '../components/Navigation';
+import './styles.css'; // You can keep your custom styles here
 
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to Sleeper Data App</h1>
+    <div className="container">
+      <h1 className="text-center mt-4">Welcome to Sleeper Data App</h1>
     </div>
   );
 };

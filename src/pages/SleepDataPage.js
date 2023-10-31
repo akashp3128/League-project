@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import SleepData from '../components/SleepData';
-import './styles.css'; // Import the CSS file
+import './styles.css'; // You can keep your custom styles here
 
 const SleepDataPage = () => {
   // Mock data for demonstration
@@ -12,8 +12,8 @@ const SleepDataPage = () => {
   ];
 
   return (
-    <div className="page-container">
-      <h1 className="welcome-message">Sleep Data Page</h1>
+    <div className="container">
+      <h1 className="text-center mt-4">Sleeper Data Page</h1>
       <SleepData data={data} />
     </div>
   );
