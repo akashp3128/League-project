@@ -5,6 +5,7 @@ import SleepDataPage from './pages/SleepDataPage'; // Import the page you want t
 import Navigation from './components/Navigation'; // Import the Navigation component
 import Home from './pages/Home'; // Import the Home component
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './globalStyles.css'; // Import the global CSS file
 
 
 function App() {

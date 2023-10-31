@@ -1,19 +1,32 @@
-// src/components/Navigation.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/sleep-data">Sleep Data</Link>
-        </li>
-        {/* Add more navigation links for other pages */}
-      </ul>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <Link to="/" className="navbar-brand">FarmHood</Link>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <Link to="/" className="nav-link">Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/sleep-data" className="nav-link">League Record</Link>
+          </li>
+          {/* Add more navigation links for other pages */}
+        </ul>
+      </div>
     </nav>
   );
 };
