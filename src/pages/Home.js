@@ -7,7 +7,7 @@ const Home = () => {
       <div className="row">
         <div className="col-md-8">
           <div className="container custom-text-color">
-            <h1 className="text-center mt-4">Welcome to Sleeper Data App</h1>
+            <h1 className="text-center mt-4">FarmHood Power Rankings</h1>
             <p>Power rankings chart here</p>
           </div>
         </div>
