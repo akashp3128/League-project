@@ -24,6 +24,10 @@ const Navigation = () => {
           <li className="nav-item">
             <Link to="/sleep-data" className="nav-link">League Record</Link>
           </li>
+          <li className="nav-item">
+            <Link to="/test" className="nav-link">Test</Link>
+            </li>
+
           {/* Add more navigation links for other pages */}
         </ul>
       </div>
