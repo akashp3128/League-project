@@ -1,4 +1,4 @@
-create helper functions
+create helper functions in services
 -league winner
 -roster
 -matchups
@@ -10,3 +10,9 @@ create helper functions
 -fetch avatars
 -use ai to compute all matchups and create power rankings??
 -refactor to make it easier to read
+
+create objects to reference
+-players
+-users
+-rosterId
+-record
