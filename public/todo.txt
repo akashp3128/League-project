@@ -1,0 +1,12 @@
+create helper functions
+-league winner
+-roster
+-matchups
+-player info
+-record
+-get playoff bracket
+-get transactions
+-fetch all players
+-fetch avatars
+-use ai to compute all matchups and create power rankings??
+-refactor to make it easier to read
