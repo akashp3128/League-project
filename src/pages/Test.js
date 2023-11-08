@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { getLeagueInfo } from '../services/sleeperAPI'; // Import the necessary functions
-import { getRostersInLeague } from '../services/getRoster'; // Import the necessary functions
+import { getLeagueInfo } from '../services/sleeperAPI';
+import { getRostersInLeague } from '../services/getRoster';
+import { getTeam } from '../services/getTeam';
+import { getAllPlayers } from '../services/getPlayers';
 
 function Test() {
   const [leagueInfo, setLeagueInfo] = useState(null);
   const [rosters, setRosters] = useState([]);
-  const leagueId = '989246993694261248'; // Replace with the desired league ID
+  const [players, setPlayers] = useState([]);
+  const leagueId = '983853389404590080';
 
   useEffect(() => {
     const fetchLeagueInfo = async () => {
@@ -33,25 +36,60 @@ function Test() {
     fetchRosters();
   }, [leagueId]);
 
+  useEffect(() => {
+    const fetchAllPlayers = async () => {
+      try {
+        const data = await getAllPlayers();
+        setPlayers(data);
+      } catch (error) {
+        // Handle the error
+      }
+    };
+
+    fetchAllPlayers();
+  }, []);
+
+  const [teamData, setTeamData] = useState([]);
+
+  useEffect(() => {
+    const fetchTeamData = async () => {
+      const teams = rosters.map(async (roster) => {
+        try {
+          const team = await getTeam(roster.team_id);
+          return { team, roster };
+        } catch (error) {
+          return { team: null, roster };
+        }
+      });
+
+      const resolvedTeams = await Promise.all(teams);
+      setTeamData(resolvedTeams);
+    };
+
+    fetchTeamData();
+  }, [rosters]);
+
   return (
     <div>
-      {leagueInfo ? (
-        <div>
-          <h2 className='custom-text-color'>League Info</h2>
-          <pre className='custom-text-color'>{JSON.stringify(leagueInfo, null, 2)}</pre>
-        </div>
-      ) : (
-        <p className='custom-text-color'>Loading league information...</p>
-      )}
 
-      {rosters.length > 0 ? (
-        <div>
-          <h2 className='custom-text-color'>Rosters</h2>
-          <pre className='custom-text-color'>{JSON.stringify(rosters, null, 2)}</pre>
+      <h2 className='color-white'>Teams and Rosters</h2>
+      {teamData.map((teamEntry, index) => (
+        <div key={index}>
+          <h3 className='color-white'>{teamEntry && teamEntry.team ? teamEntry.team.name : 'Unknown Team'}</h3>
+          <h4 className='color-white'>Roster:</h4>
+          <ul className='color-white'>
+            {teamEntry.roster.players.map((playerId) => {
+              // Find the player data for the current player ID
+              const playerData = players[playerId];
+              return (
+                <li key={playerId}>
+                  {playerData ? playerData.hashtag : 'Unknown Player'}
+                </li>
+              );
+            })}
+          </ul>
         </div>
-      ) : (
-        <p className='custom-text-color'>Loading rosters...</p>
-      )}
+      ))}
     </div>
   );
 }
