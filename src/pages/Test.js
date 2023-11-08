@@ -83,7 +83,7 @@ function Test() {
               const playerData = players[playerId];
               return (
                 <li key={playerId}>
-                  {playerData ? playerData.hashtag : 'Unknown Player'}
+                 {playerData ? (playerData.search_first_name && playerData.search_last_name ? `${playerData.search_first_name} ${playerData.search_last_name}` : 'Unknown Player') : 'Unknown Player'}
                 </li>
               );
             })}
