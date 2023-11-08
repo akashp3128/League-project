@@ -30,14 +30,14 @@ const SleepDataPage = () => {
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-3">
-          <div className="container p-4 custom-text-color">
+          <div className="container p-4 color-white">
             <h1 className="text-center">League all time Record</h1>
             <SleepData data={allTimeData} />
           </div>
         </div>
         <div className="col-md-9">
           <div className="container p-4">
-            <h1 className="text-center custom-text-color">Current year record</h1>
+            <h1 className="text-center color-white">Current year record</h1>
             <SleepData data={currentYearData} />
           </div>
         </div>

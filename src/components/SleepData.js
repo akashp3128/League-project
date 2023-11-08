@@ -3,9 +3,9 @@ import React from 'react';
 const SleepData = ({ data }) => {
   return (
     <div>
-      <h2 className="custom-text-color"></h2>
+      <h2 className="color-white"></h2>
       <div className="table-responsive">
-        <table className="table table-bordered table-striped custom-text-color">
+        <table className="table table-bordered table-striped color-white">
           <thead>
             <tr>
               <th>Team</th>
