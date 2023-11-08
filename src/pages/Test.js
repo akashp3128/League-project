@@ -12,7 +12,7 @@ function TeamCard({ teamEntry, players }) {
     };
   
     return (
-      <div className={`team-card ${isExpanded ? 'expanded' : ''}`} onClick={toggleExpansion}>
+        <div className={`team-card ${isExpanded ? 'expanded' : ''}`} onClick={toggleExpansion}>
         <h3 className='color-sleeperblue'>{teamEntry && teamEntry.team ? teamEntry.team.name : 'Unknown Team'}</h3>
         {isExpanded && (
           <div className="roster">
